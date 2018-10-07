@@ -1,5 +1,5 @@
 {% set name = "importlib_metadata" %}
-{% set version = "0.5" %}
+{% set version = "0.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f6fb31513ab8cf7a1fceb5d67041989f05c0c3c3a54998328e257943627121e3
+  sha256: 36b02c84f9001adf65209fefdf951be8e9014a95eab9938c0779ad5670359b1c
 
 build:
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
 
 requirements:
