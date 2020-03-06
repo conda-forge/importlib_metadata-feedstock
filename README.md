@@ -1,4 +1,4 @@
-About importlib_metadata
+About importlib-metadata
 ========================
 
 Home: https://gitlab.com/python-devs/importlib_metadata
@@ -181,27 +181,28 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-importlib--metadata-green.svg)](https://anaconda.org/conda-forge/importlib-metadata) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/importlib-metadata.svg)](https://anaconda.org/conda-forge/importlib-metadata) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/importlib-metadata.svg)](https://anaconda.org/conda-forge/importlib-metadata) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/importlib-metadata.svg)](https://anaconda.org/conda-forge/importlib-metadata) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-importlib_metadata-green.svg)](https://anaconda.org/conda-forge/importlib_metadata) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/importlib_metadata.svg)](https://anaconda.org/conda-forge/importlib_metadata) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/importlib_metadata.svg)](https://anaconda.org/conda-forge/importlib_metadata) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/importlib_metadata.svg)](https://anaconda.org/conda-forge/importlib_metadata) |
 
-Installing importlib_metadata
+Installing importlib-metadata
 =============================
 
-Installing `importlib_metadata` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `importlib-metadata` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `importlib_metadata` can be installed with:
+Once the `conda-forge` channel has been enabled, `importlib-metadata, importlib_metadata` can be installed with:
 
 ```
-conda install importlib_metadata
+conda install importlib-metadata importlib_metadata
 ```
 
-It is possible to list all of the versions of `importlib_metadata` available on your platform with:
+It is possible to list all of the versions of `importlib-metadata` available on your platform with:
 
 ```
-conda search importlib_metadata --channel conda-forge
+conda search importlib-metadata --channel conda-forge
 ```
 
 
@@ -243,17 +244,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating importlib_metadata-feedstock
+Updating importlib-metadata-feedstock
 =====================================
 
-If you would like to improve the importlib_metadata recipe or build a new
+If you would like to improve the importlib-metadata recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/importlib_metadata-feedstock are
+Note that all branches in the conda-forge/importlib-metadata-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
