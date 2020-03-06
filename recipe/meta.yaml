@@ -1,33 +1,48 @@
-{% set name = "importlib_metadata" %}
 {% set version = "1.5.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: importlib-metadata
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/i/importlib_metadata/importlib_metadata-{{ version }}.tar.gz
   sha256: 06f5b3a99029c7134207dd882428a66992a9de2bef7c2b699b5641f9886c3302
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
 
-requirements:
-  host:
-    - pip
-    - setuptools_scm
-    - python
-  run:
-    - python
-    - zipp >=0.5
-    - pathlib2  # [py2k]
-    - contextlib2  # [py2k]
-    - configparser >=3.5  # [py2k]
+outputs:
+  - name: importlib-metadata
+    script: build_base.bat  # [win]
+    script: build_base.sh  # [not win]
+    requirements:
+      host:
+        - python
+        - pip
+        - setuptools_scm
+      run:
+      - python
+      - zipp >=0.5
+      - pathlib2  # [py2k]
+      - contextlib2  # [py2k]
+      - configparser >=3.5  # [py2k]
+    test:
+      requires:
+        - pip
+      commands:
+        - pip check
+      imports:
+        - importlib_metadata
 
-test:
-  imports:
-    - importlib_metadata
+  - name: importlib_metadata
+    build:
+      noarch: generic
+    requirements:
+      run:
+        - {{ pin_subpackage('importlib-metadata', max_pin="x.x.x") }}
+    test:
+      imports:
+        - importlib_metadata
 
 about:
   home: https://gitlab.com/python-devs/importlib_metadata
