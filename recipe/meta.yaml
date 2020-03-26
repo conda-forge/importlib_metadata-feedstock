@@ -23,9 +23,9 @@ outputs:
       run:
         - python
         - zipp >=0.5
-        - pathlib2 # [py2k]
-        - contextlib2 # [py2k]
-        - configparser >=3.5 # [py2k]
+        - pathlib2  # [py2k]
+        - contextlib2  # [py2k]
+        - configparser >=3.5  # [py2k]
     test:
       requires:
         - pip
@@ -46,7 +46,7 @@ outputs:
 
 about:
   home: https://gitlab.com/python-devs/importlib_metadata
-  license: APACHE-2.0
+  license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
   summary: A library to access the metadata for a Python package
