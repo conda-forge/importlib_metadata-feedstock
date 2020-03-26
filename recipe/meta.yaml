@@ -1,4 +1,4 @@
-{% set version = "1.5.0" %}
+{% set version = "1.5.2" %}
 
 package:
   name: importlib-metadata
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/i/importlib_metadata/importlib_metadata-{{ version }}.tar.gz
-  sha256: 06f5b3a99029c7134207dd882428a66992a9de2bef7c2b699b5641f9886c3302
+  sha256: dfc83688553a91a786c6c91eeb5f3b1d31f24d71877bbd94ecbf5484e57690a2
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: importlib-metadata
@@ -21,11 +21,11 @@ outputs:
         - pip
         - setuptools_scm
       run:
-      - python
-      - zipp >=0.5
-      - pathlib2  # [py2k]
-      - contextlib2  # [py2k]
-      - configparser >=3.5  # [py2k]
+        - python
+        - zipp >=0.5
+        - pathlib2  # [py2k]
+        - contextlib2  # [py2k]
+        - configparser >=3.5  # [py2k]
     test:
       requires:
         - pip
@@ -46,10 +46,10 @@ outputs:
 
 about:
   home: https://gitlab.com/python-devs/importlib_metadata
-  license: APACHE-2.0
+  license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
-  summary:  A library to access the metadata for a Python package
+  summary: A library to access the metadata for a Python package
 
 extra:
   recipe-maintainers:
