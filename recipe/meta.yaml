@@ -19,7 +19,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python >=3
         - pip
         - setuptools_scm
       run:
