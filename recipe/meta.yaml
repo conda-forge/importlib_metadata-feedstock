@@ -9,12 +9,14 @@ source:
   sha256: 77a540690e24b0305878c37ffd421785a6f7e53c8b5720d211b211de8d0e95da
 
 build:
-  number: 0
+  number: 1
+  noarch: python
 
 outputs:
   - name: importlib-metadata
-    script: build_base.bat  # [win]
-    script: build_base.sh  # [not win]
+    script: build_base.sh
+    build:
+      noarch: python
     requirements:
       host:
         - python
@@ -23,9 +25,6 @@ outputs:
       run:
         - python
         - zipp >=0.5
-        - pathlib2  # [py2k]
-        - contextlib2  # [py2k]
-        - configparser >=3.5  # [py2k]
     test:
       requires:
         - pip
@@ -55,3 +54,4 @@ extra:
   recipe-maintainers:
     - nehaljwani
     - nicoddemus
+    - marcelotrevisani
