@@ -20,14 +20,13 @@ build:
 
 outputs:
   - name: importlib-metadata
-    script: build_base.sh
+{% if build_script == 'noop' %}
+    script: python --version
+{% else %}
+    script: python -m pip install --no-deps --ignore-installed .
+{% endif %}
     build:
       noarch: python
-{% if build_script == 'noop' %}
-      script: python --version
-{% else %}
-      script: python -m pip install --no-deps --ignore-installed .
-{% endif %}
     requirements:
       host:
 {% if build_script == 'noop' %}
