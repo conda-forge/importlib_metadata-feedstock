@@ -1,4 +1,6 @@
 {% set version = "2.0.0" %}
+# Even numbers only please to allow the noarch package automatically occupy odd numbers
+{% set build_number = "2" %}
 
 package:
   name: importlib-metadata
@@ -9,27 +11,46 @@ source:
   sha256: 77a540690e24b0305878c37ffd421785a6f7e53c8b5720d211b211de8d0e95da
 
 build:
-  number: 1
   noarch: python
+{% if build_script == 'noop' %}
+  number: {{ build_number | int * 2 + 1 }}
+{% else %}
+  number: {{ build_number | int * 2 }}
+{% endif %}
 
 outputs:
   - name: importlib-metadata
     script: build_base.sh
     build:
       noarch: python
+{% if build_script == 'noop' %}
+      script: python --version
+{% else %}
+      script: python -m pip install --no-deps --ignore-installed .
+{% endif %}
     requirements:
       host:
-        - python >=3
+{% if build_script == 'noop' %}
+        - python >=3.8
+{% else %}
+        - python >=3,<3.8
         - pip
         - setuptools_scm
+{% endif %}
       run:
-        - python >=3
+{% if build_script == 'noop' %}
+        - python >=3.8
+{% else %}
+        - python >=3,<3.8
         - zipp >=0.5
+{% endif %}
     test:
+{% if build_script != 'noop' %}
       requires:
         - pip
       commands:
         - pip check
+{% endif %}
       imports:
         - importlib_metadata
 
