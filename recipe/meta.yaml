@@ -19,11 +19,11 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3
+        - python >=3.6
         - pip
         - setuptools_scm
       run:
-        - python >=3
+        - python >=3.6
         - zipp >=0.5
     test:
       requires:
