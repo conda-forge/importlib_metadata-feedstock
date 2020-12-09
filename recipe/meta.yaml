@@ -1,4 +1,4 @@
-{% set version = "3.1.1" %}
+{% set version = "1.7.0" %}
 
 package:
   name: importlib-metadata
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/i/importlib_metadata/importlib_metadata-{{ version }}.tar.gz
-  sha256: b0c2d3b226157ae4517d9625decf63591461c66b3a808c2666d538946519d170
+  sha256: 90bb658cdbbf6d1735b6341ce708fc7024a3e14e99ffdc5783edea9f9b077f83
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
@@ -21,7 +21,7 @@ outputs:
       host:
         - python >=3.6
         - pip
-        - setuptools_scm
+        - setuptools_scm >=3.4.1
       run:
         - python >=3.6
         - zipp >=0.5
