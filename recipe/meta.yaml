@@ -16,11 +16,11 @@ outputs:
     script: build_base.sh
     requirements:
       host:
-        - python >=3.6
+        - python
         - pip
         - setuptools_scm
       run:
-        - python >=3.6
+        - python
         - typing_extensions >=3.6.4  # [py<38]
         - zipp >=0.5
     test:
