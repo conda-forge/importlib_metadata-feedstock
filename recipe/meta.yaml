@@ -9,7 +9,7 @@ source:
   sha256: 5c5a2720817414a6c41f0a49993908068243ae02c1635a228126519b509c8aed
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
@@ -24,6 +24,7 @@ outputs:
         - setuptools_scm
       run:
         - python >=3.6
+        - typing_extensions >=3.6.4
         - zipp >=0.5
     test:
       requires:
@@ -44,7 +45,7 @@ outputs:
         - importlib_metadata
 
 about:
-  home: https://gitlab.com/python-devs/importlib_metadata
+  home: https://github.com/python/importlib_metadata
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
