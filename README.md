@@ -1,7 +1,7 @@
 About importlib-metadata
 ========================
 
-Home: https://gitlab.com/python-devs/importlib_metadata
+Home: https://github.com/python/importlib_metadata
 
 Package license: Apache-2.0
 
