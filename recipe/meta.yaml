@@ -14,8 +14,6 @@ build:
 outputs:
   - name: importlib-metadata
     script: build_base.sh
-    build:
-      noarch: python
     requirements:
       host:
         - python >=3.6
