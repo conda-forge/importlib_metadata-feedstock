@@ -9,22 +9,19 @@ source:
   sha256: 5c5a2720817414a6c41f0a49993908068243ae02c1635a228126519b509c8aed
 
 build:
-  number: 1
-  noarch: python
+  number: 2
 
 outputs:
   - name: importlib-metadata
     script: build_base.sh
-    build:
-      noarch: python
     requirements:
       host:
-        - python >=3.6
+        - python
         - pip
         - setuptools_scm
       run:
-        - python >=3.6
-        - typing_extensions >=3.6.4
+        - python
+        - typing_extensions >=3.6.4  # [py<38]
         - zipp >=0.5
     test:
       requires:
