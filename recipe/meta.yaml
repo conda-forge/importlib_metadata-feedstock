@@ -45,7 +45,7 @@ outputs:
         - importlib_metadata
 
 about:
-  home: https://gitlab.com/python-devs/importlib_metadata
+  home: https://github.com/python/importlib_metadata
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
