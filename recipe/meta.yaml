@@ -1,4 +1,4 @@
-{% set version = "3.7.2" %}
+{% set version = "3.7.3" %}
 
 package:
   name: importlib-metadata
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/i/importlib_metadata/importlib_metadata-{{ version }}.tar.gz
-  sha256: 18d5ff601069f98d5d605b6a4b50c18a34811d655c55548adc833e687289acde
+  sha256: 742add720a20d0467df2f444ae41704000f50e1234f46174b51f9c6031a1bd71
 
 build:
   number: 0
