@@ -10,6 +10,7 @@ source:
 
 build:
   number: 0
+  noarch: python
 
 outputs:
   - name: importlib-metadata
@@ -19,12 +20,11 @@ outputs:
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
-        - python
+        - python >=3.8
         - pip
         - setuptools_scm !=6.1.0
       run:
-        - python
-        - typing_extensions >=3.6.4  # [py<38]
+        - python >=3.8
         - zipp >=0.5
     test:
       requires:
