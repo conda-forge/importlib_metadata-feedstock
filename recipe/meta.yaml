@@ -9,7 +9,7 @@ source:
   sha256: 5d26852efe48c0a32b0509ffbc583fda1a2266545a78d104a6f4aff3db17d700
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: importlib-metadata
