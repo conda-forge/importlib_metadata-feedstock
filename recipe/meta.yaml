@@ -22,8 +22,7 @@ outputs:
       host:
         - python >=3.8
         - pip
-        # Don't depend on setuptools_scm to avoid circular dependency
-        # - setuptools_scm !=6.1.0
+        - setuptools_scm !=6.1.0
       run:
         - python >=3.8
         - zipp >=0.5
@@ -32,8 +31,6 @@ outputs:
         - pip
       commands:
         - pip check
-        # Ensure the version is still set correctly
-        - pip list | grep "importlib-metadata" | grep "{{ version }}"
       imports:
         - importlib_metadata
 
