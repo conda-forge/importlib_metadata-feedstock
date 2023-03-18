@@ -1,11 +1,11 @@
-About importlib-metadata
-========================
+About importlib-metadata-feedstock
+==================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/importlib_metadata-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/python/importlib_metadata
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/importlib_metadata-feedstock/blob/main/LICENSE.txt)
 
 Summary: A library to access the metadata for a Python package
 
