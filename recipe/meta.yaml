@@ -13,23 +13,39 @@ build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
-requirements:
-  host:
-    - python {{ python_min }}
-    - pip
-    - setuptools
-    - setuptools_scm !=6.1.0
-  run:
-    - python >={{ python_min }}
-    - zipp >=0.5
-test:
-  requires:
-    - pip
-    - python {{ python_min }}
-  commands:
-    - pip check
-  imports:
-    - importlib_metadata
+outputs:
+  - name: importlib-metadata
+    script: build_base.sh
+    requirements:
+      build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+      host:
+        - python {{ python_min }}
+        - pip
+        - setuptools
+        - setuptools_scm !=6.1.0,<=8.3.0  # upper constrain to avoid circular dependencies
+      run:
+        - python >={{ python_min }}
+        - zipp >=0.5
+    test:
+      requires:
+        - pip
+        - python {{ python_min }}
+      commands:
+        - pip check
+      imports:
+        - importlib_metadata
+
+  - name: importlib_metadata
+    build:
+      noarch: generic
+    requirements:
+      run:
+        - {{ pin_subpackage('importlib-metadata', max_pin="x.x.x") }}
+    test:
+      imports:
+        - importlib_metadata
 
 about:
   home: https://github.com/python/importlib_metadata
