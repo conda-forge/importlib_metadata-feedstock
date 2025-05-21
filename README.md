@@ -28,6 +28,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-importlib--metadata-green.svg)](https://anaconda.org/conda-forge/importlib-metadata) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/importlib-metadata.svg)](https://anaconda.org/conda-forge/importlib-metadata) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/importlib-metadata.svg)](https://anaconda.org/conda-forge/importlib-metadata) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/importlib-metadata.svg)](https://anaconda.org/conda-forge/importlib-metadata) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-importlib__metadata-green.svg)](https://anaconda.org/conda-forge/importlib_metadata) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/importlib_metadata.svg)](https://anaconda.org/conda-forge/importlib_metadata) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/importlib_metadata.svg)](https://anaconda.org/conda-forge/importlib_metadata) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/importlib_metadata.svg)](https://anaconda.org/conda-forge/importlib_metadata) |
 
 Installing importlib-metadata
 =============================
@@ -39,16 +40,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `importlib-metadata` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `importlib-metadata, importlib_metadata` can be installed with `conda`:
 
 ```
-conda install importlib-metadata
+conda install importlib-metadata importlib_metadata
 ```
 
 or with `mamba`:
 
 ```
-mamba install importlib-metadata
+mamba install importlib-metadata importlib_metadata
 ```
 
 It is possible to list all of the versions of `importlib-metadata` available on your platform with `conda`:
