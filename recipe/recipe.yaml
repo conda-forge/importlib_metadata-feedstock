@@ -14,7 +14,7 @@ source:
   sha256: d13b81ad223b890aa16c5471f2ac3056cf76c5f10f82d6f9292f0b415f389000
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
@@ -29,7 +29,7 @@ outputs:
       host:
         - python ${{ python_min }}.*
         - pip
-        - setuptools
+        - setuptools >=61.2
         # as this depends on importlib-metadata, is patched out above
         # - setuptools_scm !=6.1.0
       run:
