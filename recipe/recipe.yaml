@@ -3,6 +3,7 @@ schema_version: 1
 
 context:
   version: "8.7.0"
+  python_max_check: "3.13"
 
 recipe:
   name: importlib-metadata
@@ -13,7 +14,7 @@ source:
   sha256: d13b81ad223b890aa16c5471f2ac3056cf76c5f10f82d6f9292f0b415f389000
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
@@ -22,13 +23,13 @@ outputs:
     build:
       noarch: python
       script:
-        - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+        - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
     requirements:
       host:
         - python ${{ python_min }}.*
         - pip
-        - setuptools
-        - setuptools_scm !=6.1.0
+        - setuptools >=61.2
+        - setuptools_scm >=3.4.1
       run:
         - python >=${{ python_min }}
         - zipp >=0.5
@@ -36,7 +37,9 @@ outputs:
       - python:
           imports: importlib_metadata
           pip_check: true
-          python_version: ${{ python_min }}.*
+          python_version:
+            - ${{ python_min }}.*
+            - ${{ python_max_check }}.*
 
   - package:
       name: importlib_metadata
@@ -49,14 +52,25 @@ outputs:
       - python:
           imports: importlib_metadata
           pip_check: true
-          python_version: ${{ python_min }}.*
+          python_version:
+            - ${{ python_min }}.*
+            - ${{ python_max_check }}.*
+      - files:
+          recipe:
+            - tests/
+        requirements:
+          run:
+            - python ${{ python_min }}.*
+            - pytest-cov
+        script:
+          - coverage run --source=importlib_metadata --branch -m pytest -vv --tb=long --color=yes
+          - coverage report --show-missing --skip-covered --fail-under=100
 
 about:
   homepage: https://github.com/python/importlib_metadata
   summary: A library to access the metadata for a Python package
   license: Apache-2.0
   license_file: LICENSE
-  license_family: APACHE
 
 extra:
   feedstock-name: importlib_metadata
