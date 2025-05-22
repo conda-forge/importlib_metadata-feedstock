@@ -23,7 +23,9 @@ outputs:
     build:
       noarch: python
       script:
-        - uv pip install --python ${{ PYTHON }} . -vv --no-deps
+        # use uv _with_ default build isolation to avoid circular dependency from 
+        # https://github.com/conda-forge/setuptools_scm-feedstock
+        - uv pip install --python ${{ PYTHON }} . -v --no-deps
     requirements:
       host:
         - python ${{ python_min }}.*
