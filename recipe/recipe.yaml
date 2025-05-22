@@ -32,7 +32,7 @@ outputs:
         - setuptools_scm >=3.4.1
       run:
         - python >=${{ python_min }}
-        - zipp >=0.5
+        - zipp >=3.20
     tests:
       - python:
           imports: importlib_metadata
