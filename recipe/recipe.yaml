@@ -3,6 +3,7 @@ schema_version: 1
 
 context:
   version: "8.7.0"
+  python_max_check: "3.13"
 
 recipe:
   name: importlib-metadata
