@@ -29,7 +29,7 @@ outputs:
         - python ${{ python_min }}.*
         - pip
         - setuptools >=61.2
-        - setuptools_scm >=3.4.1
+        - setuptools-scm >=3.4.1
       run:
         - python >=${{ python_min }}
         - zipp >=3.20
@@ -56,7 +56,7 @@ outputs:
             - ${{ python_min }}.*
             - ${{ python_max_check }}.*
       - files:
-          recipe:
+          source:
             - tests/
         requirements:
           run:
