@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: "8.7.0"
+
+recipe:
+  name: importlib-metadata
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/i/importlib_metadata/importlib_metadata-${{ version }}.tar.gz
+  sha256: d13b81ad223b890aa16c5471f2ac3056cf76c5f10f82d6f9292f0b415f389000
+
+build:
+  number: 0
+  noarch: python
+
+outputs:
+  - package:
+      name: importlib-metadata
+    build:
+      noarch: python
+      script:
+        - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+    requirements:
+      host:
+        - python ${{ python_min }}.*
+        - pip
+        - setuptools
+        - setuptools_scm !=6.1.0
+      run:
+        - python >=${{ python_min }}
+        - zipp >=0.5
+    tests:
+      - python:
+          imports: importlib_metadata
+          pip_check: true
+          python_version:
+            - ${{ python_min }}.*
+
+  - package:
+      name: importlib_metadata
+    build:
+      noarch: generic
+    requirements:
+      run:
+        - ${{ pin_subpackage("importlib-metadata", exact=True) }}
+    tests:
+      - python:
+          imports: importlib_metadata
+          pip_check: true
+          python_version:
+            - ${{ python_min }}.*
+
+about:
+  homepage: https://github.com/python/importlib_metadata
+  summary: A library to access the metadata for a Python package
+  license: Apache-2.0
+  license_file: LICENSE
+  license_family: APACHE
+
+extra:
+  feedstock-name: importlib_metadata
+  recipe-maintainers:
+    - nehaljwani
+    - nicoddemus
+    - marcelotrevisani
