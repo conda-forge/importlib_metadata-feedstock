@@ -23,7 +23,7 @@ outputs:
     build:
       noarch: python
       script:
-        - uv pip install --python ${{ PYTHON }} . --no-deps
+        - uv pip install --python ${{ PYTHON }} . -vv --no-deps
     requirements:
       host:
         - python ${{ python_min }}.*
