@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "8.7.0"
+  version: "8.7.1"
   python_max_check: "3.13"
 
 recipe:
@@ -11,10 +11,10 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/i/importlib_metadata/importlib_metadata-${{ version }}.tar.gz
-  sha256: d13b81ad223b890aa16c5471f2ac3056cf76c5f10f82d6f9292f0b415f389000
+  sha256: 49fef1ae6440c182052f407c8d34a68f72efc36db9ca90dc0113398f2fdde8bb
 
 build:
-  number: 1
+  number: 0
   noarch: python
 
 outputs:
