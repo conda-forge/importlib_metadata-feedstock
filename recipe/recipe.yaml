@@ -37,7 +37,6 @@ outputs:
       - python:
           imports:
             - importlib_metadata
-            - importlib_metadata._typing
           pip_check: true
           python_version:
             - ${{ python_min }}.*
@@ -54,7 +53,6 @@ outputs:
       - python:
           imports:
             - importlib_metadata
-            - importlib_metadata._typing
           pip_check: true
           python_version:
             - ${{ python_min }}.*
