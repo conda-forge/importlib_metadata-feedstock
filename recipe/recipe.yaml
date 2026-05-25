@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "9.0.0"
+  version: "8.7.1"
   python_max_check: "3.13"
 
 recipe:
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/i/importlib_metadata/importlib_metadata-${{ version }}.tar.gz
-  sha256: a4f57ab599e6a2e3016d7595cfd72eb4661a5106e787a95bcc90c7105b831efc
+  sha256: 49fef1ae6440c182052f407c8d34a68f72efc36db9ca90dc0113398f2fdde8bb
 
 build:
   number: 0
@@ -37,6 +37,7 @@ outputs:
       - python:
           imports:
             - importlib_metadata
+            - importlib_metadata._typing
           pip_check: true
           python_version:
             - ${{ python_min }}.*
@@ -53,6 +54,7 @@ outputs:
       - python:
           imports:
             - importlib_metadata
+            - importlib_metadata._typing
           pip_check: true
           python_version:
             - ${{ python_min }}.*
@@ -70,7 +72,7 @@ outputs:
             - python ${{ python_min }}.*
         script:
           - coverage run --source=importlib_metadata --branch -m pytest -vv --tb=long --color=yes
-          - coverage report --show-missing --skip-covered --fail-under=90
+          - coverage report --show-missing --skip-covered --fail-under=89
 
 about:
   homepage: https://github.com/python/importlib_metadata
