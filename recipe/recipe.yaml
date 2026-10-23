@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "9.1.0"
+  version: "10.0.0"
   python_max_check: "3.13"
 
 recipe:
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/i/importlib_metadata/importlib_metadata-${{ version }}.tar.gz
-  sha256: 9607fb24f95d4e0b1c17d57ec4604357d76d3f0d154f19fd4861f2e31c8e4065
+  sha256: 91f91d04082e49e99df91762a6571ad65a56dabf876b860e668ffa107eaf1a98
 
 build:
   number: 0
